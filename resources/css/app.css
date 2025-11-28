@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-display: "Inter", sans-serif;
+    --color-olive-green: #616C39;
+    --color-forest-green: #283618;
+}
+
+@layer base {
+    body {
+        @apply font-display
+    }
+}
+
+@layer components {
+    .container {
+        @apply w-full px-40
+    }
+
+    .nav__menu {
+        @apply flex items-center gap-10 text-olive-green font-bold text-sm
+    }
+
+    .hero-section {
+        @apply bg-[url(/public/img/hero_bg.jpeg)] bg-center bg-no-repeat bg-cover relative;
+        @apply min-h-[500px] flex items-center;
+        @apply before:absolute before:bg-linear-10 before:from-olive-green before:from-10% before:via-olive-green before:via-30% before:to-olive-green/10  before:to-90% before:w-full before:h-full
+    }
+    
+    .container.about-section {
+        @apply flex justify-between py-16
+    }
+
+    .card-container.about {
+        @apply grid grid-cols-2 gap-8
+    }
+
+    .card-container.about .card {
+        @apply flex justify-between items-center gap-4
+    }
+
+    .card-container.about .card .card__icon {
+        @apply flex justify-center items-center w-12 h-12 h-fit rounded-full bg-gray-500/10
+    }
+
+    .card-container.about .card .card__icon svg{
+        @apply w-8 h-8 bg-none
+    }
+
+    .card-container.about .card .card__content .card__title {
+        @apply text-lg font-bold
+    }
+
+    .card-container.about .card .card__content .card__description {
+        @apply text-xs
+    }
+
+    .section__header {
+        @apply flex flex-col gap-4 pb-8
+    }
+
+    .section__label {
+        @apply flex items-center gap-2 px-4 py-2  w-fit font-semibold text-sm rounded-3xl bg-gray-100/20 
+    }
+    .section__title {
+        @apply font-extrabold text-3xl
+    }
+
+    .section__desc {
+        @apply text-xs
+    }
+
+
+
+    /* Categories section */
+    .products {
+        @apply pb-40
+    }
+
+    .card-container.products {
+        @apply grid grid-cols-3 gap-8
+    }
+
+    /* .card.product {
+        @apply rounded-3xl bg-olive-green
+    } */
+
+    .card.product .card__media .product__img {
+        @apply bg-center bg-cover bg-no-repeat;
+        @apply w-full min-h-80 rounded-3xl
+    }
+
+    .card.product .card__content {
+        @apply py-8
+    }
+
+    .card.product .card__content .product__title {
+        @apply font-medium text-2xl
+    }
+
+    .card.product .card__content .product__price {
+        @apply font-medium text-lg text-gray-700
+    }
+
+    .card.product .card__actions .button-shop{
+        @apply flex justify-center items-center p-4 shadow-md shadow-gray-200 border-2 border-gray-50 rounded-full cursor-pointer
+    }
+}
