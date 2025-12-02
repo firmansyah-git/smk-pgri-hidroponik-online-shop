@@ -10,6 +10,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/producttt', function () {
+    return view('admin.producttt');
+});
+
 Route::middleware('guest')->group(function() {
     Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [RegisterController::class, 'register']);

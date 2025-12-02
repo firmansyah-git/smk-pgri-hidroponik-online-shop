@@ -25,7 +25,9 @@
         </nav>
 
         <div class="actions">
-            <button>Login</button>
+            <a href="{{ route('login') }}">
+                Login
+            </a>
         </div>
     </div>
 </header>

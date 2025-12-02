@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-display: "Inter", sans-serif;
+    --color-primary: #4f39f6;
+    --color-secondary: #283618;
+}
+
+@layer components {
+
+    /* Sidebar */
+    .nav__link {
+        @apply flex items-center gap-4 px-3 py-2 rounded-lg text-gray-800; 
+        @apply hover:text-black hover:bg-emerald-600/20;
+    }
+
+
+    .btn {
+        @apply flex items-center gap-2 p-2 rounded-lg border-1 border-gray-200 cursor-pointer text-xs md:text-sm;
+        @apply hover:bg-gray-100;
+    }
+
+    .icon {
+        @apply h-4 w-4 md:h-5 md:w-5;
+    }
+
+    .btn-search {
+        @apply relative text-sm;
+    }
+
+    .btn__submit {
+        @apply bg-primary text-white
+    }
+
+    .btn-search__input {
+        @apply pl-8 pr-2 py-2 rounded-lg border-1 border-gray-200;
+        @apply focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200;
+    }
+
+    .btn-search__icon {
+        @apply absolute left-2 top-1/2 -translate-y-1/2
+    }
+
+
+    /* main */
+
+    .section-header {
+        @apply flex justify-between items-center pb-4;
+    }
+
+    .section-header__info {
+        @apply flex flex-col gap-1;
+    }
+
+    .section-header__info .section-header__title {
+        @apply font-bold text-lg md:text-2xl
+    }
+
+    .section-header__info .section-header__text {
+        @apply text-xs md:text-sm text-gray-600
+    }
+
+    .section-header__actions {
+        @apply flex items-center gap-4
+    }
+
+
+
+
+    /* Form input */
+
+    .form-container {
+        @apply p-6 rounded-lg border border-gray-200 bg-white
+    }
+
+    .form__group {
+        @apply grid gap-4
+    }
+
+    .form__field {
+        @apply mb-6 text-xs md:text-sm;
+    }
+
+    .form__label {
+        @apply block mb-2;
+    }
+
+    .form__input {
+        @apply w-full px-3 py-2 rounded-lg border border-gray-200;
+        @apply focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow;
+    }
+
+    .form__label-image {
+        @apply flex flex-col items-center justify-center w-full h-32 text-xs md:text-sm border-2 border-gray-200 border-dashed rounded-lg cursor-pointer hover:bg-gray-50 transition-colors
+    }
+
+    .form__error {
+        @apply mt-1 text-red-600;   
+    }
+
+    .form__actions {
+        @apply flex items-center gap-2
+    }
+}
